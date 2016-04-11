@@ -1,5 +1,33 @@
-<ul class="video-list">
-  {{#each videos}}
-  <li>{{title}}</li>
-  {{/each}}
-</ul>
+<link rel="stylesheet" href="stylesheets/style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+<script src="lib/lightningVideo.js"></script>
+<script src="javascripts/script.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+
+
+<h1 class="title">Vimeo Staff Picks</h1>
+
+<div class="overlay"></div>
+
+
+<div id="contentContainer" class="trans3d"> 
+  <section id="carouselContainer" class="trans3d">
+    {{#each videos}}
+      <figure class="carouselItem trans3d video">
+        <div class="carouselItemInner trans3d">
+          <div class="video-info video-start" id="info-{{id}}" data-video-id="{{id}}">
+            <h3 class="video-title">"{{title}}"</h3>
+            <img class="uploader-img" target="_blank" href={{user_url}} src={{user_portrait_large}}>
+            <div class="video-uploader">by {{user_name}}</div>
+            <div class="video-likes"> &hearts; {{stats_number_of_likes}}</div>
+            <div class="video-plays"> &#9658; {{stats_number_of_plays}}</div>
+
+          </div>
+          <img id="thumbnail-{{id}}" data-video-id="{{id}}" class="video-thumbnail video-start" src="{{thumbnail_large}}">
+        </div>
+      </figure>
+    {{/each}}
+  </section>
+</div>
+<div class="video-player"></div>

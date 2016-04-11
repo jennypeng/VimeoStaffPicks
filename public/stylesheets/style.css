@@ -1,8 +1,134 @@
 body {
   padding: 50px;
+  padding-top: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow: hidden;
 }
 
 a {
   color: #00B7FF;
+}
+.title{
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 50px;
+  color: black;
+  text-align: center;
+  margin: 0 auto 00px auto;
+  position: relative;
+  z-index: 200;
+}
+.overlay{
+  background-color: black;
+  opacity: .8;
+  position:fixed;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  z-index:100;
+  display: none;
+}
+.video-player {
+  width: 0px;
+  height: 0px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1000;
+  position: relative;
+  outline: none;
+  border-color: black;
+  box-shadow: 0 0 80px black;
+  margin-top: 50px;
+}
+.video-info {
+  font-family: Helvetica;
+  text-align: center;
+  display: none;
+  background: white;
+  width: 400px;
+  height: 300px;
+  border-width: 3px;
+  border-color: black;
+  box-shadow: 0 0 3px black;
+  padding-top: 20px;
+  font-size: 20px;
+}
+.uploader-img{
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.video-title {
+  margin-top: 5px;
+  font-style: italic;
+  font-weight: lighter;
+}
+.video-uploader {
+  margin-bottom: 10px;
+}
+.video-likes, .video-plays{
+  margin-bottom: 5px;
+}
+.video-thumbnail {
+  border-color: black;
+  box-shadow: 0 0 1px black;
+  height: 300px;
+  width: 400px;
+}
+
+/** CSS for rotating carousel. John Blazek: http://codepen.io/johnblazek/pen/nceyw/ */
+
+/* hardware accelatator class */  
+.trans3d {
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform-style: preserve-3d;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform-style:preserve-3d;
+  -ms-transform: translate3d(0, 0, 0);
+  transform-style:preserve-3d;
+  transform: translate3d(0, 0, 0);
+}
+
+#contentContainer {
+  position:absolute;
+  margin-left:-500px;
+  margin-top:-500px;
+  left:50%;
+  top:50%;
+  width:1000px;
+  height:1000px;
+}
+
+#carouselContainer {
+  position:absolute;
+  margin-left:-500px;
+  margin-top:-500px;
+  left:50%;
+  top:50%;
+  width:1000px;
+  height:1000px;
+}
+
+.carouselItem {
+  width:320px;
+  height:130px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-left:-160px;
+  margin-top:-90px;
+  visibility:hidden;
+}
+
+.carouselItemInner {
+  width:400px;
+  height:300px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-left:-160px;
+  margin-top:-90px;
+  text-align:center;
+  padding-top:50px;  
 }
